@@ -4,13 +4,11 @@ import "../assets/vendors/font-awesome/css/font-awesome.css"
 import $ from "jquery";
 const Swipe = require("../assets/vendors/swipe/swipe.js");
 let People = ()=>import(/* webpackChunkName: 'people'*/ './class/people.js');
-setTimeout(()=>{
-  People().then((data)=>{
-    console.log(data);
-    // let p = new data.default();
-    // p.say();
-  })
-},300)
+People().then((People)=>{
+  console.log(People);
+  // let p = new data.default();
+  // p.say();
+})
 
 console.log(111)
 
