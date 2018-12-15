@@ -11,7 +11,7 @@ module.exports = {
     output:{
         path:path.join(__dirname,'dist'),
         // filename:'[hash:6].js',
-        filename: '[name].[hash].js',
+        filename: 'js/[name].[hash].js',
     },
     module:configModule,
     plugins:[
@@ -20,13 +20,13 @@ module.exports = {
             title:"哈哈哈啊",
             filename:'index.html',
             template:'./src/index.html',
-            chunks:['index']
+            chunks:['runtime','vendor','common','index']
         }),
         new HtmlWebpackPlugin({
             title:"列表页",
             filename:'list.html',
             template:'./src/list.html',
-            chunks:['list']
+            chunks:['runtime','vendor','common','list']
         })
     ]
 }

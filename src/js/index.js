@@ -1,7 +1,10 @@
 import "../assets/css/style.css";
 import "../assets/vendors/font-awesome/css/font-awesome.css"
 import $ from "jquery";
-const Swipe = require("../assets/vendors/swipe/swipe.js")
+const Swipe = require("../assets/vendors/swipe/swipe.js");
+import People from './class/people.js';
+let p = new People();
+p.say();
 
 $(function(){
     var swiper = Swipe(document.querySelector('.swipe'), {
