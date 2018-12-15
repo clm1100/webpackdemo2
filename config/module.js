@@ -36,8 +36,9 @@ module.exports = {
                 {
                     loader:'file-loader',
                     options:{
+                        name: dev=="development"?'[hash:5].[ext]':'/css/font/[hash:5].[ext]'
                         // name: '/font/[hash:5].[ext]'
-                        name: '/css/font/[hash:5].[ext]',
+                        // name: '/css/font/[hash:5].[ext]',
                     }
                 }
             ]
@@ -47,6 +48,13 @@ module.exports = {
             use:[
                 {loader: 'html-withimg-loader'}
             ]
-        }
+        },
+        // {
+        //     test: /\.js$/,
+        //     exclude: /(node_modules)/,
+        //     use: {
+        //       loader: "babel-loader" // 转化需要的loader
+        //     }
+        // }
     ]
 }

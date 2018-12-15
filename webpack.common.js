@@ -1,7 +1,5 @@
 const path = require('path');
 const configModule = require('./config/module.js');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 module.exports = {
     entry:{
@@ -12,21 +10,7 @@ module.exports = {
         path:path.join(__dirname,'dist'),
         // filename:'[hash:6].js',
         filename: 'js/[name].[hash].js',
+        // chunkFilename: "[name].chunk.js"
     },
-    module:configModule,
-    plugins:[
-        new CleanWebpackPlugin(["dist"]),
-        new HtmlWebpackPlugin({
-            title:"哈哈哈啊",
-            filename:'index.html',
-            template:'./src/index.html',
-            chunks:['runtime','vendor','common','index']
-        }),
-        new HtmlWebpackPlugin({
-            title:"列表页",
-            filename:'list.html',
-            template:'./src/list.html',
-            chunks:['runtime','vendor','common','list']
-        })
-    ]
+    module:configModule
 }

@@ -9,3 +9,4 @@ class People {
 }
 
 export default People;
+// export default "module"
