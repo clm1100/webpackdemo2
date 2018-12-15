@@ -5,7 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 module.exports = {
     entry:{
-        index:'./src/js/index.js'
+        index:'./src/js/index.js',
+        list:'./src/js/list.js'
     },
     output:{
         path:path.join(__dirname,'dist'),
@@ -17,7 +18,15 @@ module.exports = {
         new CleanWebpackPlugin(["dist"]),
         new HtmlWebpackPlugin({
             title:"哈哈哈啊",
-            template:'./src/index.html'
+            filename:'index.html',
+            template:'./src/index.html',
+            chunks:['index']
+        }),
+        new HtmlWebpackPlugin({
+            title:"列表页",
+            filename:'list.html',
+            template:'./src/list.html',
+            chunks:['list']
         })
     ]
 }
